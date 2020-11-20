@@ -3,8 +3,8 @@
 Serviço responsável por consultar informações monetárias, cotações e moedas das APIs de dados abertos do governo.
 
 # Introdução Arquitetura 
-Durante o desenvolvimento foram tomadas algumas decisões com relação a tecnologias usadas. O backend foi desenvolvimento utilizando o framework 
-[Quarkus](https://quarkus.io/) por questões de produtividade e desempenho em relação a outra arquiteturas.
+Durante o desenvolvimento foram tomadas algumas decisões com relação a tecnologias usadas. O backend foi desenvolvido utilizando o framework 
+[Quarkus](https://quarkus.io/) por questões de produtividade e desempenho em relação a outras arquiteturas.
 
 Algumas ferramentas foram adicionadas para monitoração e logs na aplicação, dentre elas: [Prometheus](https://quarkus.io/guides/microprofile-metrics), [Jaeger](https://quarkus.io/guides/opentracing), 
 [Elasticsearh](https://quarkus.io/guides/centralized-log-management), [Logstash](https://quarkus.io/guides/centralized-log-management) e [Kibana](https://quarkus.io/guides/centralized-log-management). Utilizando as [integrações](https://quarkus.io/guides/) que o quarkus oferece. 

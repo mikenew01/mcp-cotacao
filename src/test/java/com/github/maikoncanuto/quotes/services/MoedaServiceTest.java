@@ -1,6 +1,5 @@
 package com.github.maikoncanuto.quotes.services;
 
-import com.github.maikoncanuto.quotes.core.exceptions.QuoteBacenIntegrationException;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +15,7 @@ public class MoedaServiceTest {
     MoedaService moedaService;
 
     @Test
-    public void testRetornoFindAllMoedas() throws QuoteBacenIntegrationException {
+    public void testRetornoFindAllMoedas() {
         final var moedas = moedaService.findAll();
 
         assertNotNull(moedas);
