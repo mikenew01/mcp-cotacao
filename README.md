@@ -99,7 +99,7 @@ Kibana | http://localhost:8380 | :white_check_mark: | Visualizar Logs e dashboar
 
 # Requisições para os Endpoints
 
-#### Buscar informação da cotação por data
+## Buscar informação da cotação por data
 **Url de requisição:**
 ```
 http://localhost:8080/api/v1/cotacoes/cotacao-dolar-dia/11-05-2020
@@ -129,8 +129,9 @@ curl -X GET "http://localhost:8080/api/v1/cotacoes/cotacao-dolar-dia/11-05-2020"
   "erro": null //Mensagem de erro
 }
 ```
+---
 
-#### Buscar informação da cotação por período
+## Buscar informação da cotação por período
 **Url de requisição:**
 ```
 http://localhost:8080/api/v1/cotacoes/cotacao-dolar-periodo?dataFinal=01-01-202&dataInicial='02-01-2020'
