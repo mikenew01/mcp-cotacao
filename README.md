@@ -102,7 +102,7 @@ Kibana | http://localhost:8380 | :white_check_mark: | Visualizar Logs e dashboar
 ## Buscar informação da cotação por data
 **Url de requisição:**
 ```
-http://localhost:8080/api/v1/cotacoes/cotacao-dolar-dia/11-05-2020
+http://localhost:8080/api/v1/cotacoes/cotacao-dolar-dia/'11-05-2020'
 ```
 **Parametrôs:**
 
@@ -110,23 +110,23 @@ Parâmetro | Formato | Tipo | Descrição | Exemplo
 --- | --- | --- | --- | ---  
 dataCotacao | MM-dd-yyyy | string | Data da cotação do dolar | '11-05-2020'
 
-**CURL:**
+**Curl:**
 ```shell script
-curl -X GET "http://localhost:8080/api/v1/cotacoes/cotacao-dolar-dia/11-05-2020" -H  "accept: */*"
+curl -X GET "http://localhost:8080/api/v1/cotacoes/cotacao-dolar-dia/'11-05-2020'" -H  "accept: */*"
 ```
 
 **Retorno:**
 ``` json
 {
-  "code": "200", //Código da requisição
-  "data": [ // Objeto retornado
+  "code": "200", 
+  "data": [ 
     {
       "cotacaoCompra": 5.5618,
       "cotacaoVenda": 5.5624,
       "dataHoraCotacao": "2020-11-05 13:09:31.961"
     }
   ],
-  "erro": null //Mensagem de erro
+  "erro": null 
 }
 ```
 ---
@@ -143,16 +143,16 @@ Parâmetro | Formato | Tipo | Descrição | Exemplo
 dataInicial | MM-dd-yyyy | string | Data inicial da cotação | '01-01-2020'
 dataFinal | MM-dd-yyyy | string | Data final da cotação | '02-01-2020'
 
-**CURL:**
+**Curl:**
 ```shell script
-curl -X GET "http://localhost:8080/api/v1/cotacoes/cotacao-dolar-periodo?dataFinal=01-01-202&dataInicial=02-01-2020" -H  "accept: */*"
+curl -X GET "http://localhost:8080/api/v1/cotacoes/cotacao-dolar-periodo?dataFinal='01-01-2020'&dataInicial='02-01-2020'" -H  "accept: */*"
 ```
 
 **Retorno:**
 ``` json
 {
-  "code": "200", //Código da requisição
-  "data": [ // Objeto retornado
+  "code": "200", 
+  "data": [ 
     {
           "cotacaoCompra": 4.0207,
           "cotacaoVenda": 4.0213,
@@ -179,6 +179,6 @@ curl -X GET "http://localhost:8080/api/v1/cotacoes/cotacao-dolar-periodo?dataFin
           "dataHoraCotacao": "2020-01-08 13:03:56.075"
         }
   ],
-  "erro": null //Mensagem de erro
+  "erro": null 
 }
 ```
