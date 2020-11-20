@@ -1,4 +1,4 @@
-# Bem-vindo ao Mcp Quote API
+# Bem-vindo ao Mcp Quote API :money_with_wings:
 
 Serviço responsável por consultar informações monetárias, cotações e moedas das APIs de dados abertos do governo.
 
