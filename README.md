@@ -400,3 +400,99 @@ curl -X GET "http://localhost:8080/api/v1/moedas" -H  "accept: */*"
 }
 ```
 ---
+
+# Estrutura do projeto
+```cmd
+mcp-quote:.
+├───.github
+│   └───workflows
+├───.idea
+│   └───libraries
+├───.mvn
+│   └───wrapper
+├───pipelines
+├───src
+│   ├───main
+│   │   ├───docker
+│   │   ├───java
+│   │   │   └───com
+│   │   │       └───github
+│   │   │           └───maikoncanuto
+│   │   │               └───quotes
+│   │   │                   ├───core
+│   │   │                   │   ├───annotations
+│   │   │                   │   ├───config
+│   │   │                   │   ├───healthcheck
+│   │   │                   │   └───interceptors
+│   │   │                   ├───domain
+│   │   │                   │   ├───dtos
+│   │   │                   │   └───enums
+│   │   │                   ├───integrations
+│   │   │                   │   └───clients
+│   │   │                   ├───resources
+│   │   │                   │   ├───config
+│   │   │                   │   ├───handlers
+│   │   │                   │   └───impl
+│   │   │                   └───services
+│   │   └───resources
+│   └───test
+│       ├───java
+│       │   └───com
+│       │       └───github
+│       │           └───maikoncanuto
+│       │               └───quotes
+│       │                   ├───integrations
+│       │                   │   └───clients
+│       │                   ├───resources
+│       │                   └───services
+│       └───resources
+└───target
+    ├───classes
+    │   ├───com
+    │   │   └───github
+    │   │       └───maikoncanuto
+    │   │           └───quotes
+    │   │               ├───core
+    │   │               │   ├───annotations
+    │   │               │   ├───config
+    │   │               │   ├───exceptions
+    │   │               │   ├───healthcheck
+    │   │               │   └───interceptors
+    │   │               ├───domain
+    │   │               │   ├───dtos
+    │   │               │   └───enums
+    │   │               ├───integrations
+    │   │               │   └───clients
+    │   │               ├───resources
+    │   │               │   ├───config
+    │   │               │   ├───handlers
+    │   │               │   └───impl
+    │   │               └───services
+    │   └───META-INF
+    ├───generated-sources
+    │   └───annotations
+    ├───generated-test-sources
+    │   └───test-annotations
+    ├───lib
+    ├───maven-archiver
+    ├───maven-status
+    │   └───maven-compiler-plugin
+    │       ├───compile
+    │       │   └───default-compile
+    │       └───testCompile
+    │           └───default-testCompile
+    ├───quarkus
+    │   └───bootstrap
+    ├───surefire-reports
+    └───test-classes
+        ├───com
+        │   └───github
+        │       └───maikoncanuto
+        │           └───quotes
+        │               ├───integrations
+        │               │   └───clients
+        │               ├───resources
+        │               └───services
+        └───META-INF
+
+```
