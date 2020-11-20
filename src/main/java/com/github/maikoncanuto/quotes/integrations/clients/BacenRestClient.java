@@ -29,7 +29,7 @@ public interface BacenRestClient {
     @GET
     @Path("/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)")
     RespostaTipoCotacaoDolarDTO getCotacaoDolarPeriodo(@QueryParam("@dataInicial") String dataInicial,
-                                                       @QueryParam("dataFinalCotacao") String dataFinalCotacao);
+                                                       @QueryParam("@dataFinalCotacao") String dataFinalCotacao);
 
     @GET
     @Path("/CotacaoMoedaDia(moeda=@moeda,dataCotacao=@dataCotacao)")

@@ -26,14 +26,13 @@ public class CotacaoService {
 
     @CacheResult(cacheName = BACEN_COTACAO_DOLAR_DIA_CACHE)
     public List<TipoCotacaoDolarDTO> findCotacaoDolarDiaByDate(final String date) {
-        final var cotacaoDolarDia = bacenRestClient.getCotacaoDolarDia(format("'%s'", date));
+        final var cotacaoDolarDia = bacenRestClient.getCotacaoDolarDia(date);
         return cotacaoDolarDia.getValue();
     }
 
     @CacheResult(cacheName = BACEN_COTACAO_DOLAR_PERIODO_CACHE)
     public List<TipoCotacaoDolarDTO> findCotacaoDolarPeriodoByDataInicialAndDataFinal(final String dataInicial,
                                                                                       final String dataFinal) {
-
         final var cotacoes = bacenRestClient.getCotacaoDolarPeriodo(dataInicial, dataFinal);
         return cotacoes.getValue();
     }
@@ -71,6 +70,5 @@ public class CotacaoService {
         final var cotacoes = bacenRestClient.getCotacaoMoedaPeriodoFechamento(codigoMoeda, dataInicialCotacao, dataFinalCotacao);
         return cotacoes.getValue();
     }
-
 
 }
