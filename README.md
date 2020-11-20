@@ -1,8 +1,8 @@
-#Bem-vindo ao Mcp Quote API
+# Bem-vindo ao Mcp Quote API
 
 Serviço responsável por consultar informações monetárias, cotações e moedas das APIs de dados abertos do governo.
 
-#Introdução Arquitetura 
+# Introdução Arquitetura 
 Durante o desenvolvimento foram tomadas algumas decisões com relação a tecnologias usadas. O backend foi desenvolvimento utilizando o framework 
 [Quarkus](https://quarkus.io/) por questões de produtividade e desempenho em relação a outra arquiteturas.
 
@@ -18,7 +18,7 @@ foi utilizado em alguns casos a propriedade 'host.docker.internal' para contorna
 
 ---
 
-#Ferramentas complementares
+# Ferramentas complementares
 
 Ferramenta | Descrição
 --- | ---
@@ -27,7 +27,7 @@ Ferramenta | Descrição
 [ELK](https://quarkus.io/guides/centralized-log-management)| Sistema centralizador de logs. Elasticsearch, Logstash e Kibana. 
 
 
-#Ambiente de desenvolvimento
+# Ambiente de desenvolvimento
 
 Existem alguns passos para execução do projeto em ambiente local, necessário que alguns programas estejam corretamente instalados.
 
@@ -39,36 +39,36 @@ Framework/lib | Versão Recomendada | S.O Utilizado
 [Docker Compose](https://docs.docker.com/compose/install/) | 1.27.4 | Windows
 [Intellij](https://www.jetbrains.com/pt-br/idea/)| - | Windows
 
-#Execução do projeto 
+# Execução do projeto 
 
-###Passo 1
+### Passo 1
 Faça o clone do projeto
 ```shell script
 $ git clone http://github.com/Maikoncanuto/mcp-quote-api.git mcp-quote
 ```
 
-###Passo 2 
+### Passo 2 
 Entre na pasta raiz do projeto
 
 ```shell script
 $ cd mcp-quote
 ```
 
-###Passo 3
+### Passo 3
 Execute o comando para levantar toda infraestrutura necessária
 
 ```shell script
 $ docker-compose up 
 ```
 
-###Passo 4
+### Passo 4
 Execute o projeto com comando do quarkus
 
 ```shell script
 $ ./mvnw compile quarkus:dev
 ```
 
-#Links de acesso para os serviços do mcp-quote-api
+# Links de acesso para os serviços do mcp-quote-api
 
 Serviço | URL | Status | Descrição
 --- | --- | --- | ---
