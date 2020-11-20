@@ -97,7 +97,8 @@ Jaeger | http://localhost:8180 | :white_check_mark: | Rastreamento de requisiç�
 Prometheus | http://localhost:8280 | :white_check_mark: | Analise de Métricas da aplicação
 Kibana | http://localhost:8380 | :white_check_mark: | Visualizar Logs e dashboards 
 
-# Requisições para os Endpoints
+
+# Exemplo de requisições para os Endpoints
 
 ## Buscar informação da cotação por data
 **Url de requisição:**
@@ -182,3 +183,220 @@ curl -X GET "http://localhost:8080/api/v1/cotacoes/cotacao-dolar-periodo?dataFin
   "erro": null 
 }
 ```
+---
+## Buscar informação da abertura de cotação para moeda e data
+**Url de requisição:**
+```
+http://localhost:8080/api/v1/cotacoes/cotacao-moeda-abertura?dataCotacao=%2711-05-2020%27&simboloMoeda=%27AUD%27
+```
+**Parametrôs Query:**
+
+Parâmetro | Formato | Tipo | Descrição | Exemplo
+--- | --- | --- | --- | ---  
+dataCotacao | MM-dd-yyyy | string | Data da cotação do dolar | '11-05-2020'
+simboloMoeda | XXX | string | Código/Simbolo da moeda | 'AUD'
+
+**Curl:**
+```shell script
+curl -X GET "http://localhost:8080/api/v1/cotacoes/cotacao-moeda-abertura?dataCotacao=%2711-05-2020%27&simboloMoeda=%27AUD%27" -H  "accept: */*"
+```
+
+**Retorno:**
+``` json
+{
+  "code": "200",
+  "data": [
+    {
+      "cotacaoCompra": 4.0381,
+      "cotacaoVenda": 4.0413,
+      "dataHoraCotacao": "2020-11-05 13:09:31.955",
+      "tipoBoletim": "Intermediário"
+    }
+  ],
+  "erro": null
+}
+```
+---
+
+## Buscar informação da cotação dia para moeda por data
+**Url de requisição:**
+```
+http://localhost:8080/api/v1/cotacoes/cotacao-moeda-dia?dataCotacao=%2711-05-2020%27&simboloMoeda=%27AUD%27
+```
+**Parametrôs Query:**
+
+Parâmetro | Formato | Tipo | Descrição | Exemplo
+--- | --- | --- | --- | ---  
+dataCotacao | MM-dd-yyyy | string | Data da cotação do dolar | '11-05-2020'
+simboloMoeda | XXX | string | Código/Simbolo da moeda | 'AUD'
+
+**Curl:**
+```shell script
+curl -X GET "http://localhost:8080/api/v1/cotacoes/cotacao-moeda-dia?dataCotacao=%2711-05-2020%27&simboloMoeda=%27AUD%27" -H  "accept: */*"
+```
+
+**Retorno:**
+``` json
+{
+  "code": "200",
+  "data": [
+    {
+      "paridadeCompra": 0.7246,
+      "paridadeVenda": 0.7247,
+      "cotacaoCompra": 4.0371,
+      "cotacaoVenda": 4.0381,
+      "dataHoraCotacao": "2020-11-05 10:09:48.908",
+      "tipoBoletim": "Abertura"
+    },
+    {
+      "paridadeCompra": 0.7247,
+      "paridadeVenda": 0.7249,
+      "cotacaoCompra": 4.0294,
+      "cotacaoVenda": 4.031,
+      "dataHoraCotacao": "2020-11-05 11:05:18.088",
+      "tipoBoletim": "Intermediário"
+    },
+    {
+      "paridadeCompra": 0.7249,
+      "paridadeVenda": 0.7254,
+      "cotacaoCompra": 4.0306,
+      "cotacaoVenda": 4.0338,
+      "dataHoraCotacao": "2020-11-05 12:08:19.051",
+      "tipoBoletim": "Intermediário"
+    }
+  ],
+  "erro": null
+}
+```
+---
+
+## Buscar informação da cotação dia por periodo e moeda
+**Url de requisição:**
+```
+http://localhost:8080/api/v1/cotacoes/cotacao-moeda-periodo?dataFinal=%2702-01-2020%27&dataInicial=%2701-01-2020%27&simboloMoeda=%27AUD%27
+```
+**Parametrôs Query:**
+
+Parâmetro | Formato | Tipo | Descrição | Exemplo
+--- | --- | --- | --- | ---  
+dataInicial | MM-dd-yyyy | string | Data de inicio da cotação | '01-01-2020'
+dataFinal | MM-dd-yyyy | string | Data final da cotação | '02-01-2020'
+simboloMoeda | XXX | string | Código/Simbolo da moeda | 'AUD'
+
+**Curl:**
+```shell script
+curl -X GET "http://localhost:8080/api/v1/cotacoes/cotacao-moeda-periodo?dataFinal=%2702-01-2020%27&dataInicial=%2701-01-2020%27&simboloMoeda=%27AUD%27" -H  "accept: */*"
+```
+
+**Retorno:**
+``` json
+{
+  "code": "200",
+  "data": [
+    {
+      "paridadeCompra": 0.6993,
+      "paridadeVenda": 0.6994,
+      "cotacaoCompra": 2.8043,
+      "cotacaoVenda": 2.8051,
+      "dataHoraCotacao": "2020-01-02 10:08:18.114",
+      "tipoBoletim": "Abertura"
+    },
+    {
+      "paridadeCompra": 0.6996,
+      "paridadeVenda": 0.6998,
+      "cotacaoCompra": 2.8067,
+      "cotacaoVenda": 2.8079,
+      "dataHoraCotacao": "2020-01-02 11:03:40.704",
+      "tipoBoletim": "Intermediário"
+    },
+    {
+      "paridadeCompra": 0.6991,
+      "paridadeVenda": 0.6993,
+      "cotacaoCompra": 2.8175,
+      "cotacaoVenda": 2.8187,
+      "dataHoraCotacao": "2020-01-02 12:10:55.168",
+      "tipoBoletim": "Intermediário"
+    }
+  ],
+  "erro": null
+}
+```
+---
+
+## Buscar informação do fechamento da cotação por periodo e data
+**Url de requisição:**
+```
+http://localhost:8080/api/v1/cotacoes/cotacao-moeda-periodo-fechamento?dataFinal=%2702-01-2020%27&dataInicial=%2701-01-2020%27&simboloMoeda=%27AUD%27
+```
+**Parametrôs Query:**
+
+Parâmetro | Formato | Tipo | Descrição | Exemplo
+--- | --- | --- | --- | ---  
+dataInicial | MM-dd-yyyy | string | Data de inicio da cotação | '01-01-2020'
+dataFinal | MM-dd-yyyy | string | Data final da cotação | '02-01-2020'
+simboloMoeda | XXX | string | Código/Simbolo da moeda | 'AUD'
+
+**Curl:**
+```shell script
+curl -X GET "http://localhost:8080/api/v1/cotacoes/cotacao-moeda-periodo-fechamento?dataFinal=%2702-01-2020%27&dataInicial=%2701-01-2020%27&simboloMoeda=%27AUD%27" -H  "accept: */*"
+```
+
+**Retorno:**
+``` json
+{
+  "code": "200",
+  "data": [
+     {
+      "cotacaoCompra": 2.8572,
+      "cotacaoVenda": 2.8584,
+      "dataHoraCotacao": "2020-01-31 13:10:35.372",
+      "tipoBoletim": "Fechamento"
+    }
+  ],
+  "erro": null
+}
+```
+---
+
+## Buscar informação de moedas
+**Url de requisição:**
+```
+http://localhost:8080/api/v1/moedas
+```
+**Parametrôs Query:**
+
+Parâmetro | Formato | Tipo | Descrição | Exemplo
+--- | --- | --- | --- | ---  
+- | - | - | - | -
+
+
+**Curl:**
+```shell script
+curl -X GET "http://localhost:8080/api/v1/moedas" -H  "accept: */*"
+```
+
+**Retorno:**
+``` json
+{
+  "code": "200",
+  "data": [
+     {
+       "simbolo": "AUD",
+       "nomeFormatado": "Dólar australiano",
+       "tipoMoeda": "B"
+     },
+     {
+       "simbolo": "CAD",
+       "nomeFormatado": "Dólar canadense",
+       "tipoMoeda": "A"
+     },
+     {
+       "simbolo": "CHF",
+       "nomeFormatado": "Franco suíço",
+       "tipoMoeda": "A"
+     }
+  ],
+  "erro": null
+}
+```
+---
