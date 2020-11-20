@@ -367,7 +367,7 @@ http://localhost:8080/api/v1/moedas
 
 Parâmetro | Formato | Tipo | Descrição | Exemplo
 --- | --- | --- | --- | ---  
-- | - | - | - | -
+Não existe | Não existe | Não existe | Não existe | Não existe
 
 
 **Curl:**
