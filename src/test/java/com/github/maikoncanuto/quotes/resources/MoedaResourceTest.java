@@ -7,12 +7,12 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.*;
 
 @QuarkusTest
-public class MoedaResourceTest {
+class MoedaResourceTest {
 
     private final static String PATH_API = "/api/v1/moedas";
 
     @Test
-    public void testRetornoEndpointFindAllMoedas() {
+    void testRetornoEndpointFindAllMoedas() {
         given()
                 .when()
                 .get(PATH_API)

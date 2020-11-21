@@ -1,6 +1,6 @@
 package com.github.maikoncanuto.quotes.domain.dtos;
 
-public class TipoCotacaoDolarAberturaOuIntermediarioDTO extends BaseDTO {
+public class TipoCotacaoDolarAberturaOuIntermediarioDTO implements BaseDTO {
 
     private Double cotacaoCompra;
     private Double cotacaoVenda;

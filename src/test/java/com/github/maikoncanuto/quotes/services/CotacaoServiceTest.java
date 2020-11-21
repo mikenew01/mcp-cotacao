@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @QuarkusTest
-public class CotacaoServiceTest {
+class CotacaoServiceTest {
 
     private final static String DATA_COTACAO = "'11-05-2020'";
     private final static String DATA_INICIAL = "'01-01-2020'";
@@ -21,7 +21,7 @@ public class CotacaoServiceTest {
     CotacaoService cotacaoService;
 
     @Test
-    public void testRetornoFindCotacaoDolarDiaByDate() {
+    void testRetornoFindCotacaoDolarDiaByDate() {
 
         final var cotacaoDolarDia = cotacaoService.findCotacaoDolarDiaByDate(DATA_COTACAO);
 
@@ -40,7 +40,7 @@ public class CotacaoServiceTest {
     }
 
     @Test
-    public void testRetornoFindCotacaoDolarPeriodoByDataInicialAndDataFinal() {
+    void testRetornoFindCotacaoDolarPeriodoByDataInicialAndDataFinal() {
         final var cotacaoDolarPeriodo = cotacaoService.findCotacaoDolarPeriodoByDataInicialAndDataFinal(DATA_INICIAL, DATA_FINAL);
 
         assertNotNull(cotacaoDolarPeriodo);
@@ -58,7 +58,7 @@ public class CotacaoServiceTest {
     }
 
     @Test
-    public void testRetornoFindCotacaoMoedaDiaByMoedaAndDataCotacao() {
+    void testRetornoFindCotacaoMoedaDiaByMoedaAndDataCotacao() {
         final var cotacaoMoedaDia = cotacaoService.findCotacaoMoedaDiaByMoedaAndDataCotacao(SIMBOLO_MOEDA, DATA_COTACAO);
 
         assertNotNull(cotacaoMoedaDia);

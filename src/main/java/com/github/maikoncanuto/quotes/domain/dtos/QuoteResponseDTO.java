@@ -5,7 +5,7 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import static org.eclipse.microprofile.openapi.annotations.enums.SchemaType.OBJECT;
 import static org.eclipse.microprofile.openapi.annotations.enums.SchemaType.STRING;
 
-public class QuoteResponseDTO extends BaseDTO {
+public class QuoteResponseDTO implements BaseDTO {
 
     @Schema(description = "Código da resposta da requisição", name = "code", example = "200", type = STRING)
     private String code;

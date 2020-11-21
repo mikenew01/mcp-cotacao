@@ -1,6 +1,6 @@
 package com.github.maikoncanuto.quotes.domain.dtos;
 
-public class TipoMoedaDTO extends BaseDTO {
+public class TipoMoedaDTO implements BaseDTO {
 
     private String simbolo;
     private String nomeFormatado;

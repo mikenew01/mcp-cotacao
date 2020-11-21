@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public class RespostaTipoCotacaoMoedaDTO extends BaseDTO {
+public class RespostaTipoCotacaoMoedaDTO implements BaseDTO {
 
     @JsonProperty("@odata.context")
     private String dataContext;

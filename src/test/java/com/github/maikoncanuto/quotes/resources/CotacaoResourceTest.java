@@ -9,12 +9,12 @@ import static org.hamcrest.CoreMatchers.*;
 
 
 @QuarkusTest
-public class CotacaoResourceTest {
+class CotacaoResourceTest {
 
     private final static String PATH_API = "/api/v1/cotacoes";
 
     @Test
-    public void testRetornoEndpointCotacaoDolarDia() {
+    void testRetornoEndpointCotacaoDolarDia() {
         given()
                 .pathParam("dataCotacao", "'11-05-2020'")
                 .when()
@@ -29,7 +29,7 @@ public class CotacaoResourceTest {
     }
 
     @Test
-    public void testRetornoEndpointCotacaoDolarPeriodoByDataInicialAndDataFinal() {
+    void testRetornoEndpointCotacaoDolarPeriodoByDataInicialAndDataFinal() {
         given()
                 .queryParam("dataInicial", "'01-01-2020'")
                 .queryParam("dataFinal", "'02-01-2020'")
@@ -45,7 +45,7 @@ public class CotacaoResourceTest {
     }
 
     @Test
-    public void testRetornoEndpointFindCotacaoMoedaDiaByMoedaAndDataCotacao() {
+    void testRetornoEndpointFindCotacaoMoedaDiaByMoedaAndDataCotacao() {
         given()
                 .queryParam("dataCotacao", "'11-05-2020'")
                 .queryParam("simboloMoeda", "'AUD'")
@@ -62,7 +62,7 @@ public class CotacaoResourceTest {
     }
 
     @Test
-    public void testRetornoEndpointFindCotacaoMoedaPeriodoByMoedaAndDataInicialAndDataFinal() {
+    void testRetornoEndpointFindCotacaoMoedaPeriodoByMoedaAndDataInicialAndDataFinal() {
         given()
                 .queryParam("dataInicial", "'01-01-2020'")
                 .queryParam("dataFinal", "'02-01-2020'")
@@ -80,7 +80,7 @@ public class CotacaoResourceTest {
     }
 
     @Test
-    public void testRetornoEndpointFindCotacaoMoedaAberturaOuIntermediarioByCodigoMoedaAndDataCotacao() {
+    void testRetornoEndpointFindCotacaoMoedaAberturaOuIntermediarioByCodigoMoedaAndDataCotacao() {
         given()
                 .queryParam("dataCotacao", "'11-05-2020'")
                 .queryParam("simboloMoeda", "'AUD'")
@@ -97,7 +97,7 @@ public class CotacaoResourceTest {
     }
 
     @Test
-    public void testRetornoEndpointFindCotacaoMoedaPeriodoFechamento() {
+    void testRetornoEndpointFindCotacaoMoedaPeriodoFechamento() {
         given()
                 .queryParam("dataInicial", "'01-01-2020'")
                 .queryParam("dataFinal", "'02-01-2020'")

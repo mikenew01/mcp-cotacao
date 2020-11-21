@@ -9,13 +9,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @QuarkusTest
-public class MoedaServiceTest {
+class MoedaServiceTest {
 
     @Inject
     MoedaService moedaService;
 
     @Test
-    public void testRetornoFindAllMoedas() {
+    void testRetornoFindAllMoedas() {
         final var moedas = moedaService.findAll();
 
         assertNotNull(moedas);

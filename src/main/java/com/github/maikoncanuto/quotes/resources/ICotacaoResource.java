@@ -2,11 +2,8 @@ package com.github.maikoncanuto.quotes.resources;
 
 import org.eclipse.microprofile.faulttolerance.Retry;
 import org.eclipse.microprofile.faulttolerance.Timeout;
-import org.eclipse.microprofile.metrics.annotation.Counted;
-import org.eclipse.microprofile.metrics.annotation.Timed;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
-import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import javax.validation.constraints.NotNull;
@@ -23,8 +20,6 @@ public interface ICotacaoResource {
 
     @GET
     @Path("cotacao-dolar-dia/{dataCotacao}")
-    @Timed(name = "timed/cotacao-dolar-dia")
-    @Counted(name = "counted/cotacao-dolar-dia")
     @Timeout
     @Retry
     @Operation(
@@ -32,16 +27,12 @@ public interface ICotacaoResource {
             operationId = "idCotacaoDolarDia",
             summary = "Buscar informação da cotação por data"
     )
-    @APIResponses({
-            @APIResponse(name = "OK", responseCode = "200", description = "Requisição completada com sucesso"),
-            @APIResponse(name = "Internal Server Error", responseCode = "500", description = "Ocorreu um problema interno no servidor")
-    })
+    @APIResponse(name = "OK", responseCode = "200", description = "Requisição completada com sucesso")
+    @APIResponse(name = "Internal Server Error", responseCode = "500", description = "Ocorreu um problema interno no servidor")
     public Response findCotacaoDolarDiaByDate(@PathParam("dataCotacao") @NotNull final String dataCotacao);
 
     @GET
     @Path("cotacao-dolar-periodo")
-    @Timed(name = "timed/cotacao-dolar-periodo")
-    @Counted(name = "counted/cotacao-dolar-periodo")
     @Timeout
     @Retry
     @Operation(
@@ -49,17 +40,13 @@ public interface ICotacaoResource {
             operationId = "idCotacaoDolarPeriodo",
             summary = "Buscar informação da cotação por período"
     )
-    @APIResponses({
-            @APIResponse(name = "OK", responseCode = "200", description = "Requisição completada com sucesso"),
-            @APIResponse(name = "Internal Server Error", responseCode = "500", description = "Ocorreu um problema interno no servidor")
-    })
+    @APIResponse(name = "OK", responseCode = "200", description = "Requisição completada com sucesso")
+    @APIResponse(name = "Internal Server Error", responseCode = "500", description = "Ocorreu um problema interno no servidor")
     public Response findCotacaoDolarPeriodoByDataInicialAndDataFinal(@QueryParam("dataInicial") @NotNull final String dataInicial,
                                                                      @QueryParam("dataFinal") @NotNull final String dataFinal);
 
     @GET
     @Path("cotacao-moeda-dia")
-    @Timed(name = "timed/cotacao-moeda-dia")
-    @Counted(name = "counted/cotacao-moeda-dia")
     @Timeout
     @Retry
     @Operation(
@@ -67,17 +54,13 @@ public interface ICotacaoResource {
             operationId = "idCotacaoMoedaDiaDataCotacao",
             summary = "Buscar informação da cotação para moeda por data"
     )
-    @APIResponses({
-            @APIResponse(name = "OK", responseCode = "200", description = "Requisição completada com sucesso"),
-            @APIResponse(name = "Internal Server Error", responseCode = "500", description = "Ocorreu um problema interno no servidor")
-    })
+    @APIResponse(name = "OK", responseCode = "200", description = "Requisição completada com sucesso")
+    @APIResponse(name = "Internal Server Error", responseCode = "500", description = "Ocorreu um problema interno no servidor")
     public Response findCotacaoMoedaDiaByMoedaAndDataCotacao(@QueryParam("dataCotacao") @NotNull final String dataCotacao,
                                                              @QueryParam("simboloMoeda") @NotNull final String simbolMoeda);
 
     @GET
     @Path("cotacao-moeda-periodo")
-    @Timed(name = "timed/cotacao-moeda-periodo")
-    @Counted(name = "counted/cotacao-moeda-periodo")
     @Timeout
     @Retry
     @Operation(
@@ -85,18 +68,14 @@ public interface ICotacaoResource {
             operationId = "idCotacaoMoedaPorPeriodo",
             summary = "Buscar informação da cotação para moeda por período"
     )
-    @APIResponses({
-            @APIResponse(name = "OK", responseCode = "200", description = "Requisição completada com sucesso"),
-            @APIResponse(name = "Internal Server Error", responseCode = "500", description = "Ocorreu um problema interno no servidor")
-    })
+    @APIResponse(name = "OK", responseCode = "200", description = "Requisição completada com sucesso")
+    @APIResponse(name = "Internal Server Error", responseCode = "500", description = "Ocorreu um problema interno no servidor")
     public Response findCotacaoMoedaPeriodoByMoedaAndDataInicialAndDataFinal(@QueryParam("simboloMoeda") @NotNull final String simboloMoeda,
                                                                              @QueryParam("dataInicial") @NotNull final String dataInicial,
                                                                              @QueryParam("dataFinal") @NotNull final String dataFinal);
 
     @GET
     @Path("cotacao-moeda-abertura")
-    @Timed(name = "timed/cotacao-moeda-abertura")
-    @Counted(name = "counted/cotacao-moeda-abertura")
     @Timeout
     @Retry
     @Operation(
@@ -104,17 +83,13 @@ public interface ICotacaoResource {
             operationId = "idAberturaCotacaoMoeda",
             summary = "Buscar informação da abertura de cotação para moeda por data"
     )
-    @APIResponses({
-            @APIResponse(name = "OK", responseCode = "200", description = "Requisição completada com sucesso"),
-            @APIResponse(name = "Internal Server Error", responseCode = "500", description = "Ocorreu um problema interno no servidor")
-    })
+    @APIResponse(name = "OK", responseCode = "200", description = "Requisição completada com sucesso")
+    @APIResponse(name = "Internal Server Error", responseCode = "500", description = "Ocorreu um problema interno no servidor")
     public Response findCotacaoMoedaAberturaOuIntermediarioByCodigoMoedaAndDataCotacao(@QueryParam("simboloMoeda") @NotNull final String simboloMoeda,
                                                                                        @QueryParam("dataCotacao") @NotNull final String dataCotacao);
 
     @GET
     @Path("cotacao-moeda-periodo-fechamento")
-    @Timed(name = "timed/cotacao-moeda-periodo-fechamento")
-    @Counted(name = "counted/cotacao-moeda-periodo-fechamento")
     @Timeout
     @Retry
     @Operation(
@@ -122,10 +97,8 @@ public interface ICotacaoResource {
             operationId = "idFechamentoCotacao",
             summary = "Buscar informação do fechamento de cotação para moeda por período"
     )
-    @APIResponses({
-            @APIResponse(name = "OK", responseCode = "200", description = "Requisição completada com sucesso"),
-            @APIResponse(name = "Internal Server Error", responseCode = "500", description = "Ocorreu um problema interno no servidor")
-    })
+    @APIResponse(name = "OK", responseCode = "200", description = "Requisição completada com sucesso")
+    @APIResponse(name = "Internal Server Error", responseCode = "500", description = "Ocorreu um problema interno no servidor")
     public Response findCotacaoMoedaPeriodoFechamento(@QueryParam("simboloMoeda") @NotNull final String simboloMoeda,
                                                       @QueryParam("dataInicial") @NotNull final String dataInicial,
                                                       @QueryParam("dataFinal") @NotNull final String dataFinal);

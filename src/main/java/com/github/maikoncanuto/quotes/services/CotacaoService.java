@@ -11,13 +11,15 @@ import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import java.util.List;
 
 import static com.github.maikoncanuto.quotes.core.config.LabelCache.*;
-import static java.lang.String.format;
+import static javax.transaction.Transactional.TxType.NOT_SUPPORTED;
 
 @Auditoria
 @ApplicationScoped
+@Transactional(NOT_SUPPORTED)
 public class CotacaoService {
 
     @Inject
@@ -33,6 +35,7 @@ public class CotacaoService {
     @CacheResult(cacheName = BACEN_COTACAO_DOLAR_PERIODO_CACHE)
     public List<TipoCotacaoDolarDTO> findCotacaoDolarPeriodoByDataInicialAndDataFinal(final String dataInicial,
                                                                                       final String dataFinal) {
+
         final var cotacoes = bacenRestClient.getCotacaoDolarPeriodo(dataInicial, dataFinal);
         return cotacoes.getValue();
     }
