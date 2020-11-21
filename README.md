@@ -7,7 +7,7 @@ Durante o desenvolvimento foram tomadas algumas decisões com relação a tecnol
 [Quarkus](https://quarkus.io/) por questões de produtividade e desempenho em relação a outras arquiteturas.
 
 Algumas ferramentas foram adicionadas para monitoração e logs na aplicação, dentre elas: [Prometheus](https://quarkus.io/guides/microprofile-metrics), [Jaeger](https://quarkus.io/guides/opentracing), 
-[Elasticsearh](https://quarkus.io/guides/centralized-log-management), [Logstash](https://quarkus.io/guides/centralized-log-management) e [Kibana](https://quarkus.io/guides/centralized-log-management). Utilizando as [integrações](https://quarkus.io/guides/) que o quarkus oferece. 
+[Elasticsearh](https://quarkus.io/guides/centralized-log-management), [Logstash](https://quarkus.io/guides/centralized-log-management), [Grafana](https://www.katacoda.com/openshift/courses/middleware/middleware-quarkus/monitoring) e [Kibana](https://quarkus.io/guides/centralized-log-management). Utilizando as [integrações](https://quarkus.io/guides/) que o quarkus oferece. 
 
 Aplicação foi pensada para ser resiliente e tolerante a falhas. 
 
@@ -26,6 +26,7 @@ Ferramenta | Descrição
 [Jaeger](https://quarkus.io/guides/opentracing) | Sistema de rastramento para requisições
 [ELK](https://quarkus.io/guides/centralized-log-management)| Sistema centralizador de logs. Elasticsearch, Logstash e Kibana
 [Quarkus](https://quarkus.io/) | Framework utilizado para criar o backend
+[Grafana](https://www.katacoda.com/openshift/courses/middleware/middleware-quarkus/monitoring) | Sistema de monitoramento e dashboards
 
 # Ambiente de desenvolvimento
 
@@ -95,7 +96,8 @@ Health Live | http://localhost:8080/health/live | :white_check_mark: | Responsá
 Health Ready | http://localhost:8080/health/ready | :white_check_mark: | Responsável por identificar se aplicação está pronta para uso
 Jaeger | http://localhost:8180 | :white_check_mark: | Rastreamento de requisições
 Prometheus | http://localhost:8280 | :white_check_mark: | Analise de Métricas da aplicação
-Kibana | http://localhost:8380 | :white_check_mark: | Visualizar Logs e dashboards 
+Kibana | http://localhost:8380 | :white_check_mark: | Visualizar Logs 
+Grafana | http://localhost:8480 | :white_check_mark: | Monitoramento e Dashboards
 
 
 # Exemplo de requisições para os Endpoints
